@@ -7,3 +7,38 @@ erDiagram
     DateTime createAt  
     }
   
+
+  Participant {
+    String id PK 
+    }
+  
+
+  User {
+    String id PK 
+    String name  
+    String email  
+    String avatarUrl  "nullable"
+    DateTime createAt  
+    }
+  
+
+  Game {
+    String id PK 
+    DateTime data  
+    String firstTeamCountryCode  
+    String secondTeamCountryCode  
+    }
+  
+
+  Guess {
+    String id PK 
+    Int firstTeamPoints  
+    Int secondTeamPoints  
+    DateTime createAt  
+    }
+  
+    Pool o{--|o User : "owner"
+    Participant o{--|| User : "user"
+    Participant o{--|| Pool : "pool"
+    Guess o{--|| Game : "game"
+    Guess o{--|| Participant : "participant"
