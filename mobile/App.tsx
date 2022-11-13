@@ -5,19 +5,23 @@ import { useFonts, Inter_700Bold, Inter_500Medium, Inter_400Regular } from "@exp
 
 import { Loading } from './src/components/Loading';
 import { Signin } from './src/screens/Signin';
+import { New } from './src/screens/New';
+import { AuthContextProvider } from './src/contexts/AuthContext';
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Inter_700Bold, Inter_500Medium, Inter_400Regular })
 
   return (
     <NativeBaseProvider theme={THEME}>
-      <StatusBar
-        barStyle='light-content'
-        backgroundColor="transparent"
-        translucent
-      />
+      <AuthContextProvider>
+        <StatusBar
+          barStyle='light-content'
+          backgroundColor="transparent"
+          translucent
+        />
 
-      {fontsLoaded ? <Signin /> : <Loading />}
+        {fontsLoaded ? <New /> : <Loading />}
+      </AuthContextProvider>
     </NativeBaseProvider>
   );
 }
