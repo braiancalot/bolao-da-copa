@@ -1,15 +1,17 @@
-import React from 'react';
+import React from "react";
 import { NativeBaseProvider, StatusBar } from 'native-base';
 import { THEME } from "./src/styles/theme"
-import { useFonts, Inter_700Bold, Inter_500Medium, Inter_400Regular } from "@expo-google-fonts/inter"
+import { useFonts, Roboto_700Bold, Roboto_500Medium, Roboto_400Regular } from "@expo-google-fonts/roboto"
 
 import { Loading } from './src/components/Loading';
 import { Signin } from './src/screens/Signin';
 import { New } from './src/screens/New';
+import { Find } from './src/screens/Find';
+import { Pools } from './src/screens/Pools';
 import { AuthContextProvider } from './src/contexts/AuthContext';
 
 export default function App() {
-  const [fontsLoaded] = useFonts({ Inter_700Bold, Inter_500Medium, Inter_400Regular })
+  const [fontsLoaded] = useFonts({ Roboto_700Bold, Roboto_500Medium, Roboto_400Regular })
 
   return (
     <NativeBaseProvider theme={THEME}>
@@ -20,7 +22,7 @@ export default function App() {
           translucent
         />
 
-        {fontsLoaded ? <New /> : <Loading />}
+        {fontsLoaded ? <Pools /> : <Loading />}
       </AuthContextProvider>
     </NativeBaseProvider>
   );

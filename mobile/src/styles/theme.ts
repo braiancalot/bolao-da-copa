@@ -23,9 +23,9 @@ export const THEME = extendTheme({
     white: '#FFFFFF'
   },
   fonts: {
-    heading: 'Inter_700Bold',
-    body: 'Inter_400Regular',
-    medium: 'Inter_500Medium'
+    heading: 'Roboto_700Bold',
+    body: 'Roboto_400Regular',
+    medium: 'Roboto_500Medium'
   },
   fontSizes: {
     xs: 12,
