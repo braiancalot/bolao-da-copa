@@ -290,6 +290,19 @@
           "isUpdatedAt": false
         },
         {
+          "name": "googleId",
+          "kind": "scalar",
+          "isList": false,
+          "isRequired": false,
+          "isUnique": true,
+          "isId": false,
+          "isReadOnly": false,
+          "hasDefaultValue": false,
+          "type": "String",
+          "isGenerated": false,
+          "isUpdatedAt": false
+        },
+        {
           "name": "avatarUrl",
           "kind": "scalar",
           "isList": false,
@@ -379,7 +392,7 @@
           "isUpdatedAt": false
         },
         {
-          "name": "data",
+          "name": "date",
           "kind": "scalar",
           "isList": false,
           "isRequired": true,
@@ -571,8 +584,21 @@
         }
       ],
       "primaryKey": null,
-      "uniqueFields": [],
-      "uniqueIndexes": [],
+      "uniqueFields": [
+        [
+          "participantId",
+          "gameId"
+        ]
+      ],
+      "uniqueIndexes": [
+        {
+          "name": null,
+          "fields": [
+            "participantId",
+            "gameId"
+          ]
+        }
+      ],
       "isGenerated": false
     }
   ],

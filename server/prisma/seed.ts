@@ -16,7 +16,6 @@ async function main() {
       title: "Example Pool",
       code: "BOL123",
       ownerId: user.id,
-
       participants: {
         create: {
           userId: user.id
@@ -27,7 +26,7 @@ async function main() {
 
   await prisma.game.create({
     data: {
-      data: '2022-11-14T12:00:00.814Z',
+      date: '2022-11-14T12:00:00.814Z',
       firstTeamCountryCode: "BR",
       secondTeamCountryCode: "DE"
     }
@@ -35,10 +34,9 @@ async function main() {
 
   await prisma.game.create({
     data: {
-      data: '2022-11-15T12:00:00.814Z',
+      date: '2022-11-15T12:00:00.814Z',
       firstTeamCountryCode: "AR",
       secondTeamCountryCode: "BR",
-
       guesses: {
         create: {
           firstTeamPoints: 1,
