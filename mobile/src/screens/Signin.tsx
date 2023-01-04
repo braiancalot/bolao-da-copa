@@ -3,10 +3,10 @@ import { Center, Icon, Text } from "native-base";
 import { Button } from "../components/Button";
 import Logo from "../assets/logo.svg"
 import { Fontisto } from "@expo/vector-icons"
-import { useAuth } from "../hooks/userAuth";
+import { useAuth } from "../hooks/useAuth";
 
-export function Signin() {
-  const { user, signIn } = useAuth();
+export function SignIn() {
+  const { signIn, isUserLoading } = useAuth();
 
   return (
     <Center flex={1} bgColor="gray.900" padding={7}>
@@ -18,6 +18,10 @@ export function Signin() {
         startIcon={<Icon as={Fontisto} name="google" color="white" size="md" />}
         marginTop={12}
         onPress={signIn}
+        isLoading={isUserLoading}
+        _loading={
+          { _spinner: { color: "white" } }
+        }
       />
 
       <Text
